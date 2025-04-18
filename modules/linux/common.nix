@@ -39,6 +39,13 @@
 			xterm
 			glances
 
+			signal-desktop
+
+			# monitor
+			htop
+			btop
+			fastfetch
+
 			# wally-cli # Firmware for the ZSA moonlander keyboard
 
 			# I don't love having these installed, but they make development

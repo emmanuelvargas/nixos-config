@@ -85,5 +85,75 @@ with lib;
 		boot.extraModprobeConfig = "options v4l2loopback devices=1 video_nr=1 card_label=\"Virtual Cam\" exclusive_caps=1";
 		security.polkit.enable = true;
 	};
+
+  services = {
+      excludePackages = [ pkgs.xterm ];
+    };
+
+    gnome = {
+      gnome-browser-connector.enable = false;
+      gnome-initial-setup.enable = false;
+      gnome-online-accounts.enable = false;
+      gnome-remote-desktop.enable = false;
+      rygel.enable = false;
+    };
+
+    udev.packages = [ pkgs.gnome-settings-daemon ];
+  };
+
+  programs.gnome-disks.enable = true;
+
+  environment = {
+    #sessionVariables.QT_QPA_PLATFORM = "wayland";
+
+    systemPackages = [ pkgs.dconf-editor pkgs.networkmanager-openconnect ] ++ [
+      pkgs.firefox # pkgs.epiphany
+      pkgs.ghostty # pkgs.gnome-console
+      pkgs.mission-center # pkgs.gnome-system-monitor
+
+      pkgs.baobab
+      pkgs.gnome-calculator
+      pkgs.gnome-shell-extensions
+      pkgs.loupe
+      pkgs.snapshot
+    ];
+
+    gnome.excludePackages = [
+      pkgs.adwaita-icon-theme
+      pkgs.epiphany
+      pkgs.evince
+      pkgs.file-roller
+      pkgs.geary
+      pkgs.gnome-backgrounds
+      pkgs.gnome-calendar
+      pkgs.gnome-characters
+      pkgs.gnome-clocks
+      pkgs.gnome-connections
+      pkgs.gnome-console
+      pkgs.gnome-contacts
+      pkgs.gnome-font-viewer
+      pkgs.gnome-logs
+      pkgs.gnome-maps
+      pkgs.gnome-music
+      pkgs.gnome-system-monitor
+      pkgs.gnome-text-editor
+      pkgs.gnome-themes-extra
+      pkgs.gnome-tour
+      pkgs.gnome-user-docs
+      pkgs.gnome-weather
+      pkgs.nautilus
+      pkgs.orca
+      pkgs.simple-scan
+      pkgs.sushi
+      pkgs.totem
+      pkgs.yelp
+
+      pkgs.baobab
+      pkgs.gnome-calculator
+      pkgs.gnome-shell-extensions
+      pkgs.loupe
+      pkgs.snapshot
+    ];
+  };
 }
 
