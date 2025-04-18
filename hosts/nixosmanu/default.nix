@@ -40,7 +40,7 @@ lib.nixosSystem {
 			services.thermald.enable			= true;
 
 			imports = [
-				../../users/m/linux.nix
+				../../users/manu/linux.nix
 			#	../../users/gavin/linux.nix
 
 				../../modules/common.nix
