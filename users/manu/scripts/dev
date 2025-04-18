@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+findProjectRoot() {
+	ORG="${PWD}"
+
+	while true; do
+		if [[ -d .git || -f .code-env ]]; then
+			echo "${PWD}"
+			return 0
+		fi
+
+		cd .. || exit #?
+		if [ "${PWD}" == "/" ]; then
+			echo "${ORG}"
+			return 0
+		fi
+	done
+
+	return 1
+}
+
+if [ $# -gt 1 ]; then
+	echo "Usage: dev [<path>]"
+	echo ""
+	echo "If no path is specified then the current directory is used"
+	exit 1
+fi
+
+if [ -n "$1" ]; then
+	# If they provided a directory then start there
+	cd "$1" || exit $?
+fi
+
+PROJECT_ROOT=$(findProjectRoot)
+NVIM_SESSION="${PROJECT_ROOT}/.code-env"
+if [ ! -d "${PROJECT_ROOT}" ]; then
+	echo "Could not find the project root"
+	exit 1
+fi
+
+# Change to the root of the environment, because the env file may have paths
+# that are relative to that.
+cd "${PROJECT_ROOT}" || exit
+
+SOCKET_DIR="${HOME}/.dtach-sockets/${PROJECT_ROOT}"
+mkdir -p "${SOCKET_DIR}"
+
+if [ -f "${NVIM_SESSION}" ]; then
+	dtach -A "${SOCKET_DIR}/dtach.socket" -z -r winch nvim -S "${NVIM_SESSION}"
+else
+	dtach -A "${SOCKET_DIR}/dtach.socket" -z -r winch nvim
+fi
+
+

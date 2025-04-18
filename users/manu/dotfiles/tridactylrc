@@ -1,0 +1,41 @@
+" set searchengine duckduckgo
+set searchengine google
+
+set allowautofocus false
+set incsearch true
+set editorcmd kitty -e nvim
+
+" " Binds
+
+" tridactyl gets J and K backwards... I'm used to qutebrowser's direction
+bind K tabprev
+bind J tabnext
+
+" New tabs go at the end of the tab list
+set tabopenpos last
+set tabclosepinned false
+
+" make d take you to the left (I find it much less confusing)
+bind d composite tabprev; tabclose #
+bind D tabclose
+
+" Ctrl-F should use the browser's native 'find' functionality.
+unbind <C-f>
+
+" Make <C-v> enter ignore like it does in qutebrowser, the default <S-Escape>
+" to get out also works
+unbind <C-v>
+bind <C-v> mode ignore
+
+" But also support Tridactyl search too.
+# bind / fillcmdline find
+# bind ? fillcmdline find -?
+bind n findnext
+bind N findnext --reverse
+
+" Allow Ctrl-a to select all in the commandline
+unbind --mode=ex <C-a>
+
+" Allow Ctrl-c to copy in the commandline
+unbind --mode=ex <C-c>
+
