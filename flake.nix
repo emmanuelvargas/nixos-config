@@ -11,15 +11,15 @@
 		agenix					= { url = "github:ryantm/agenix";						inputs.nixpkgs.follows = "nixpkgs"; };
 
 		# Neovim, with minego configuration, plugins and custommizations
-		#neovim-minego			= { url = "github:minego/nixvim";						inputs.nixpkgs.follows = "nixpkgs"; };
+		neovim-minego			= { url = "github:minego/nixvim";						inputs.nixpkgs.follows = "nixpkgs"; };
 
 		# DWL, with minego patches etc
-		#dwl-minego-customized	= { url = "github:minego/dwl/main";						inputs.nixpkgs.follows = "nixpkgs"; };
+		dwl-minego-customized	= { url = "github:minego/dwl/main";						inputs.nixpkgs.follows = "nixpkgs"; };
 
 		# My plugins for interception-tools
 		#mackeys					= { url = "github:minego/mackeys";						inputs.nixpkgs.follows = "nixpkgs"; };
-		#swapmods				= { url = "github:minego/swapmods";						inputs.nixpkgs.follows = "nixpkgs"; };
-		#chrkbd					= { url = "github:minego/chrkbd";						inputs.nixpkgs.follows = "nixpkgs"; };
+		swapmods				= { url = "github:minego/swapmods";						inputs.nixpkgs.follows = "nixpkgs"; };
+		chrkbd					= { url = "github:minego/chrkbd";						inputs.nixpkgs.follows = "nixpkgs"; };
 
 		# NixOS generators allow outputting to formats like an iso, image, etc
 		nixos-generators		= { url = "github:nix-community/nixos-generators";		inputs.nixpkgs.follows = "nixpkgs"; };
