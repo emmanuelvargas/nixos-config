@@ -73,7 +73,7 @@ let user = "dustin";
       #   Option       "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
       #   Option       "AllowIndirectGLXProtocol" "off"
       #   Option       "TripleBuffer" "on"
-      '';
+      # '';
 
       # LightDM Display Manager
       displayManager.defaultSession = "none+bspwm";
@@ -248,9 +248,9 @@ let user = "dustin";
     tumbler.enable = true; # Thumbnail support for images
   };
 
-  systemd.user.services.emacs = {
-    serviceConfig.TimeoutStartSec = "7min";
-  };
+  # systemd.user.services.emacs = {
+  #   serviceConfig.TimeoutStartSec = "7min";
+  # };
 
   # Enable sound
   sound.enable = true;
@@ -264,7 +264,7 @@ let user = "dustin";
       driSupport = true;
     };
 
-    nvidia.modesetting.enable = true;
+    # nvidia.modesetting.enable = true;
 
     # Crypto wallet support
     ledger.enable = true;
