@@ -1,4 +1,4 @@
-{ config, inputs, lib, pkgs, agenix, ... }:
+{ config, inputs, lib, pkgs, modulesPath, agenix, ... }:
 
 let user = "dustin";
     keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOk8iAnIaa1deoc7jw8YACPNVka1ZFJxhnU4G74TmS+p" ]; in
@@ -7,6 +7,7 @@ let user = "dustin";
     ../../modules/nixos/secrets.nix
     ../../modules/nixos/disk-config.nix
     ../../modules/shared
+    (modulesPath + "/profiles/qemu-guest.nix")
     agenix.nixosModules.default
   ];
 
@@ -19,9 +20,10 @@ let user = "dustin";
       };
       efi.canTouchEfiVariables = true;
     };
-    initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "v4l2loopback" ];
-    kernelModules = [ "uinput" "v4l2loopback" ];
-    extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
+    boot.initrd.availableKernelModules = [ "ahci" "xhci_pci" "virtio_pci" "sr_mod" "virtio_blk" ];
+    boot.initrd.kernelModules = [ ];
+    boot.kernelModules = [ "kvm-intel" ];
+    boot.extraModulePackages = [ ];
   };
 
   # Set your time zone.
