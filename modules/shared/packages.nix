@@ -24,7 +24,7 @@ with pkgs; [
   uv
 
   # Encryption and security tools
-  _1password
+  # _1password
   age
   age-plugin-yubikey
   gnupg
@@ -35,17 +35,17 @@ with pkgs; [
   # docker-compose
   # awscli2 - marked broken Mar 22
   flyctl
-  google-cloud-sdk
+  # google-cloud-sdk
   go
   gopls
   ngrok
   ssm-session-manager-plugin
-  terraform
-  terraform-ls
-  tflint
+  # terraform
+  # terraform-ls
+  # tflint
 
   # Media-related packages
-  emacs-all-the-icons-fonts
+  # emacs-all-the-icons-fonts
   imagemagick
   dejavu_fonts
   ffmpeg
@@ -60,20 +60,20 @@ with pkgs; [
   pngquant
 
   # PHP
-  php82
-  php82Packages.composer
-  php82Packages.php-cs-fixer
-  php82Extensions.xdebug
-  php82Packages.deployer
-  phpunit
+  # php82
+  # php82Packages.composer
+  # php82Packages.php-cs-fixer
+  # php82Extensions.xdebug
+  # php82Packages.deployer
+  # phpunit
 
   # Node.js development tools
-  fzf
-  nodePackages.live-server
-  nodePackages.nodemon
-  nodePackages.prettier
-  nodePackages.npm
-  nodejs
+  # fzf
+  # nodePackages.live-server
+  # nodePackages.nodemon
+  # nodePackages.prettier
+  # nodePackages.npm
+  # nodejs
 
   # Source code management, Git, GitHub tools
   gh
@@ -82,11 +82,11 @@ with pkgs; [
   htop
   hunspell
   iftop
-  jetbrains-mono
-  jetbrains.phpstorm
+  # jetbrains-mono
+  # jetbrains.phpstorm
   jq
   ripgrep
-  slack
+  # slack
   tree
   tmux
   unrar

@@ -5,7 +5,7 @@ let shared-packages = import ../shared/packages.nix { inherit pkgs; }; in
 shared-packages ++ [
 
   # Security and authentication
-  _1password-gui
+  # _1password-gui
   yubikey-agent
   keepassxc
 
@@ -16,9 +16,9 @@ shared-packages ++ [
   home-manager
 
   # Media and design tools
-  gimp
+  # gimp
   vlc
-  wineWowPackages.stable
+  # wineWowPackages.stable
   fontconfig
   font-manager
 
@@ -33,15 +33,15 @@ shared-packages ++ [
   pavucontrol # Pulse audio controls
 
   # Messaging and chat applications
-  cider # Apple Music on Linux
-  discord
-  hexchat # Chat
-  fractal # Matrix.org messaging app
+  # cider # Apple Music on Linux
+  # discord
+  # hexchat # Chat
+  # fractal # Matrix.org messaging app
   #tdesktop # telegram desktop
 
   # Testing and development tools
   beekeeper-studio
-  cypress # Functional testing framework using headless chrome
+  # cypress # Functional testing framework using headless chrome
   chromedriver
   direnv
   rofi
@@ -85,8 +85,8 @@ shared-packages ++ [
   zathura
 
   # Music and entertainment
-  spotify
+  # spotify
 
   # VR
-  immersed-vr
+  # immersed-vr
 ]

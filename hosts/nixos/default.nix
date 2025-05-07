@@ -66,13 +66,13 @@ let user = "dustin";
     xserver = {
       enable = true;
 
-      videoDrivers = [ "nvidia" ];
+      # videoDrivers = [ "nvidia" ];
 
       # This helps fix tearing of windows for Nvidia cards
-      screenSection = ''
-        Option       "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
-        Option       "AllowIndirectGLXProtocol" "off"
-        Option       "TripleBuffer" "on"
+      # screenSection = ''
+      #   Option       "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
+      #   Option       "AllowIndirectGLXProtocol" "off"
+      #   Option       "TripleBuffer" "on"
       '';
 
       # LightDM Display Manager

@@ -63,5 +63,5 @@ shared-packages ++ [
   zathura
 
   # Music and entertainment
-  spotify
+  # spotify
 ]

@@ -38,15 +38,15 @@ with pkgs; [
   meslo-lgs-nf
 
   # Node.js development tools
-  nodePackages.npm # globally install npm
-  nodePackages.prettier
-  nodejs
+  # nodePackages.npm # globally install npm
+  # nodePackages.prettier
+  # nodejs
 
   # Text and terminal utilities
   htop
   hunspell
   iftop
-  jetbrains-mono
+  # jetbrains-mono
   jq
   ripgrep
   tree
