@@ -49,14 +49,14 @@ let
       notify-send 'Network found.'
 
       # Wait for the Emacs daemon
-      notify-send 'Starting Emacs...'
-      /run/current-system/sw/bin/emacsclient -a "" -e '(progn)' &
+      # notify-send 'Starting Emacs...'
+      # /run/current-system/sw/bin/emacsclient -a "" -e '(progn)' &
 
       # Wait for Emacs daemon to be ready
-      while ! /run/current-system/sw/bin/emacsclient -e '(progn)' &>/dev/null; do
+      # while ! /run/current-system/sw/bin/emacsclient -e '(progn)' &>/dev/null; do
       sleep 1
       done
-      notify-send 'Emacs daemon started.'
+      # notify-send 'Emacs daemon started.'
     '';
   };
 
@@ -184,12 +184,12 @@ let
     # Emacs
     # -c flag is --create-frame
     # -a flag is fallback to plain emacs if daemon fails
-    super + alt + Return
-         emacsclient -c -a emacs
+#     super + alt + Return
+#          emacsclient -c -a emacs
 
-    super + alt + e
-         systemctl --user restart emacs.service && \
-         emacsclient -c -a emacs
+#     super + alt + e
+#          systemctl --user restart emacs.service && \
+#          emacsclient -c -a emacs
 
     # Web browser
     ctrl + alt + Return

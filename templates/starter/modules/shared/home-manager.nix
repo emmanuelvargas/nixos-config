@@ -37,8 +37,8 @@ let name = "%NAME%";
 
       # Emacs is my editor
       export ALTERNATE_EDITOR=""
-      export EDITOR="emacsclient -t"
-      export VISUAL="emacsclient -c -a emacs"
+      export EDITOR="vim"
+      export VISUAL="vim"
 
       e() {
           emacsclient -t "$@"
