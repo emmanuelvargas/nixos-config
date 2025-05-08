@@ -24,6 +24,7 @@ in
       # ++ [(import (builtins.fetchTarball {
       #          url = "https://github.com/dustinlyons/emacs-overlay/archive/refs/heads/master.tar.gz";
       #          sha256 = emacsOverlaySha256;
-      #      }))];
+      #      }))]
+           ;
   };
 }
