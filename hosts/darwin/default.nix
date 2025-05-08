@@ -1,6 +1,6 @@
 { agenix, config, pkgs, ... }:
 
-let user = "dustin"; in
+let user = "manu"; in
 {
 
   imports = [
